@@ -1,3 +1,3 @@
-#!/user/bin/python3
-print("Best School")
+#!/bin/usr/python3
+print("Hello World")
 
