@@ -1,45 +1,53 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
- * is_palindrome - function that check for palindrom
- * @head:list
- *Return: 0 or 1
+ * is_palindrome - checks if linked list is palindrome
+ * @head: the head of the list
+ * Return: 1 if palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	const listint_t *current;
-	int len;
-	int i, j;
-	int arr[10000];
+	int length;
+	int count = 0;
+	int i;
+	listint_t *ptr;
 
-	if (*head == NULL)
-		return (1);
-	current = *head;
-	len = 0;
-	while (current != NULL)
-	{
-		current = current->next;
-		len++;
-	}
-	if (len == 1)
+	if (!head || !*head)
 		return (1);
 
-	current = *head;
-	i = 0;
-	while (current != NULL)
+	ptr = *head;
+
+	while (ptr != NULL)
 	{
-		arr[i] = current->n;
-		i++;
-		current = current->next;
+		count++;
+		ptr = ptr->next;
 	}
-	j = 0;
-	i--;
-	len--;
-	while (i >= (len / 2))
+
+	length = count + 1;
+	int *arr = malloc(sizeof(int) * length);
+
+	ptr = *head;
+	count = 0;
+	while (ptr != NULL)
 	{
-		if (arr[i] != arr[j])
+		arr[count] = ptr->n;
+		count++;
+		ptr = ptr->next;
+	}
+	for (i = 0; i < count / 2; i++)
+	{
+		if (arr[i] == arr[(count - 1) - i])
+		{
+			continue;
+		}
+		else
+		{
 			return (0);
-		i--;
-		j++;
+		}
 	}
+	free(arr);
 	return (1);
 }
