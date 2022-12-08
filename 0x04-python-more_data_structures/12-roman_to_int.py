@@ -18,7 +18,7 @@ def roman_to_int(roman_string):
             else:
                 sum -= rom_num[roman_string[x]]
             x += 1
-            sum += rom_num[roman_string[x]]
-            return sum
-        else:
-            return 0
+        sum += rom_num[roman_string[x]]
+        return sum
+    else:
+        return 0
