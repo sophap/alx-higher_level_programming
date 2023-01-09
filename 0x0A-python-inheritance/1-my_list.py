@@ -5,11 +5,7 @@ Module of inherited list
 
 
 Class Mylist(list):
-    """
-    My list
-    """
+    """Mylist"""
     def print_sorted(self):
-        """
-        Prints sorted list
-        """
+        """Prints a sorted list"""
         print(sorted(self))
