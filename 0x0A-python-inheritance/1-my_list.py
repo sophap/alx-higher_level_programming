@@ -3,6 +3,7 @@
 Module of inherited list
 """
 
+
 Class Mylist(list):
     """
     My list
