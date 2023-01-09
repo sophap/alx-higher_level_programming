@@ -4,7 +4,7 @@ Empty Geometry Class
 """
 
 
-class BaseGeometry(self):
+class BaseGeometry:
     """
     empty class
     """
