@@ -4,7 +4,7 @@ Module of inherited list
 """
 
 
-Class Mylist(list):
+class MyList(list):
     """Mylist"""
     def print_sorted(self):
         """Prints a sorted list"""
