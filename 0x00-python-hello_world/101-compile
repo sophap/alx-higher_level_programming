@@ -1,4 +1,2 @@
 #!/bin/bash
-pyfile=$PYFILE
-output_file="${pyfile}c"
-python3 -m compileall "$pyfile"
+python3 -m compileall -b "$PYFILE"
