@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from sys import argv
+import sys
 def print_args(argv):
     num_args = len(argv)
     print("{} argument{}{}".format(num_args, "s" if num_args != 1 else "", "." if num_args == 0 else ":"))
