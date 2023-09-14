@@ -14,9 +14,10 @@ void print_python_string(PyObject *p)
 		return;
 	}
 
-	const char* value = PyUnicode_AsUTF8(p);
-	Py_UNICODE* unicode_str = PyUnicode_AsUnicode(p);
+	const char *value = PyUnicode_AsUTF8(p);
+	Py_UNICODE *unicode_str = PyUnicode_AsUnicode(p);
 	Py_ssize_t length = PyUnicode_GetLength(p);
+
 	printf("  type: compact ");
 
 	if (PyUnicode_IS_COMPACT_ASCII(p))
