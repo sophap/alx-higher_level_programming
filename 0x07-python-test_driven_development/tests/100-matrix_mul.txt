@@ -51,6 +51,18 @@ Checking for passing non-list to m_b:
 	 ...
 	 TypeError: m_b must be a list
 
+Checking for passing non-list element into m_a matrix:
+	 >>> matrix_mul([[1, 2], 3], [[5, 6], [7, 8]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_a must be a list of lists
+
+Checking for passing non-list element into m_b matrix:
+	 >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], 7])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_b must be a list of lists
+
 Checking for passing empty m_a:
 	 >>> matrix_mul([], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
