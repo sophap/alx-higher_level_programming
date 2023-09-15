@@ -12,5 +12,10 @@ class LockedClass:
 
     def __setattr__(self, attr, value):
         if attr != 'first_name':
-            raise AttributeError("'LockedClass' object has no attribute '{}'".format(attr))
-        self.__dict__.update({attr: value})
+            raise AttributeError("'LockedClass' object \
+has no attribute '{}'".format(attr))
+    
+    def __getattribute__(self, attr):
+        if attr == '__dict__':
+            raise AttributeError("'LockedClass' object has no attribute '__dict__'")
+        return super().__getattribute__(attr)
