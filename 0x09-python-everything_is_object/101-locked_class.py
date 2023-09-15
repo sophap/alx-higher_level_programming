@@ -17,5 +17,6 @@ has no attribute '{}'".format(attr))
     
     def __getattribute__(self, attr):
         if attr == '__dict__':
-            raise AttributeError("'LockedClass' object has no attribute '__dict__'")
+            raise AttributeError("'LockedClass' object \
+has no attribute '__dict__'")
         return super().__getattribute__(attr)
